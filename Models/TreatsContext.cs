@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Treats.Models
 {
@@ -8,6 +9,8 @@ namespace Treats.Models
     public virtual DbSet<Treat> Treat { get; set; }
     public DbSet<Flavor> Flavor { get; set; }
     public DbSet<TreatFlavor> TreatFlavor { get; set; }
+
+    public DbSet<IdentityUser> IdentityUser { get; set; }
     
     public TreatsContext(DbContextOptions options) : base(options) { }
   }
