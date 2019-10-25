@@ -1,12 +1,12 @@
 # Treats
 
-This is an application that I made for my solo project at Epicodus.
+This is an application that I made for my 5th week C#/.NET project at Epicodus.
 
 #### By Erin Deuel on 10/25/2019
 
 ## Description
 
-
+This program allows the user to log in and create a List of treats and add different flavors. I uses SqLite instead of MySQL for simplicity reasons.
 
 ## Specs
 
@@ -19,7 +19,14 @@ This is an application that I made for my solo project at Epicodus.
 |  |  |  |
 ## Setup Instructions
 
-* type in https://magpiemortician.github.io/treats/ into your browser
+* type in https://magpiemortician.github.io/treats.Solution/ into your browser
+* Clone project to your desktop
+* dotnet watch run to start the program
+* click around in the program
+* create an account and sign in
+* create treats
+* create flavors
+* close Program
 
 
 ## Known Bugs
@@ -35,6 +42,8 @@ Erin Deuel: end.gaia@gmail.com
 ## Technologies Used
 
 * C#
+* Visual Studio Code
+* SqLite
 
 ### License
 
