@@ -34,7 +34,7 @@ namespace Treats.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
+    public ActionResult Info(int id)
     {
         var thisTreat = _db.Treat
         .Include(treat => treat.Flavors)

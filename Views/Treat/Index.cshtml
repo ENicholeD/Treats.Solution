@@ -1,7 +1,7 @@
 @using Treats.Models;
 @model List<Treats.Models.Treat>;
 
-<h1>Treat Selections</h1>
+<h1>Treat Selections for @User.Identity.Name</h1>
 
 @if (@Model.Count == 0)
 {

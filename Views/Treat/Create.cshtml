@@ -1,0 +1,10 @@
+@model Treats.Models.Treat
+
+<h4>Add Treat selection</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type)
+    <input type="submit" value="Add new treat" />
+}
+<p>@Html.ActionLink("Back to Treat Selections", "Index")</p>
