@@ -4,7 +4,7 @@ using Treats.Models;
 using System.Threading.Tasks;
 using Treats.ViewModels;
 
-namespace ToDoList.Controllers
+namespace Treats.Controllers
 {
     public class AccountController : Controller
     {
