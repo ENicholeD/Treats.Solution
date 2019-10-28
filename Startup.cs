@@ -33,8 +33,8 @@ namespace Treats
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<TreatsContext>();
+            .AddEntityFrameworkStores<TreatsContext>()
+            .AddDefaultTokenProviders();    
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

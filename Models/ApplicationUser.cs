@@ -4,6 +4,6 @@ namespace Treats.Models
 {
     public class ApplicationUser : IdentityUser
     {
-
+    
     }
 }
