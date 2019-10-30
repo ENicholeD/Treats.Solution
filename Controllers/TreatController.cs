@@ -3,18 +3,25 @@ using Treats.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+// added
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Treats.Controllers
 {
+  // added
+  [Authorize] 
   public class TreatController : Controller
   {
     private readonly TreatsContext _db;
-
-    public TreatController(TreatsContext db)
+    // added
+    private readonly UserManager<ApplicationUser> _userManager;
+    public TreatController(UserManager<ApplicationUser> userManager, TreatsContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
-
+    // --------------------:
     public ActionResult Index()
     {
       List<Treat> model = _db.Treat.ToList();
