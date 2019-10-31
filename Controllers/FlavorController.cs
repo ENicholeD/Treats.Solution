@@ -2,21 +2,18 @@ using Microsoft.AspNetCore.Mvc;
 using Treats.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-// added
 using Microsoft.EntityFrameworkCore;
 
 namespace Treats.Controllers
 {
-  [Authorize] 
+   
   public class FlavorController : Controller
   {
     private readonly TreatsContext _db;
-    private readonly UserManager<ApplicationUser> _userManager;
-   public FlavorController(UserManager<ApplicationUser> userManager, TreatsContext db)
+    
+   public FlavorController(TreatsContext db)
     {
-      _userManager = userManager;
       _db = db;
     }
 
@@ -25,7 +22,7 @@ namespace Treats.Controllers
       List<Flavor> model = _db.Flavor.ToList();
       return View(model);
     }
-    // added
+    [Authorize]
     public ActionResult Create()
     {
       return View();
@@ -67,6 +64,5 @@ namespace Treats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    // ---------------------------:
   }
 }
