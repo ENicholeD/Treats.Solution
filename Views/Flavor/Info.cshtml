@@ -1,14 +1,13 @@
-@model Treats.Models.Flavor
+<!-- Flavor -->
+@using Treats.Models;
+@model Treats.Models.Flavor;
 
 <h2>Flavors</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.FlavorType): @Html.DisplayFor(model => model.FlavorType)</h3>
+<h3>@Html.DisplayNameFor(model => model.FlavorType):
+  @Html.DisplayFor(model => model.FlavorType)</h3>
 
-@if(@Model.AllTreats.Count == 0)
-{
-  <p>There are no treats with this flavor</p>
-}
-else
+@if(@Model.Treats.Count > 0)
 {
   <h4>Treats with this flavor:</h4>
   <ul>
@@ -23,6 +22,11 @@ else
     }
   }
   </ul>
+  
+}
+else
+{
+  <p>There are no treats with this flavor</p>
 }
 <p>@Html.ActionLink("Back to Flavors", "Index")</p>
 <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>

@@ -7,11 +7,11 @@ namespace Treats.Models
     public Flavor()
 
         {
-            this.AllTreats = new HashSet<TreatFlavor>();
+            this.TreatFlavors = new HashSet<TreatFlavor>();
         }
     public int FlavorId { get; set; }
     public string FlavorType { get; set; }
     public virtual ApplicationUser User { get; set; }
-    public ICollection<TreatFlavor> AllTreats { get;}
+    public ICollection<TreatFlavor> TreatFlavors { get; set;}
   }
 }

@@ -1,26 +1,27 @@
+<!-- Treat -->
 @using Treats.Models;
 @model Treats.Models.Treat;
-
 
 <h2>Treat</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Type): 
 @Html.DisplayFor(model => model.Type)</h3>
 
-@if(@Model.Flavors.Count == 0)
-{
-  <p>sorry, there are no specified flavors at this time.</p>
-}
-
-else
+@if(@Treats.Flavors.Any())
 {
   <h4>Flavor options:</h4>
   <ul>
-  @foreach(var join in Model.Flavors)
+  @foreach(Flavor flavor in Treats.Flavors)
   {
     <li>@join.Flavor.FlavorType</li>
   }
   </ul>
+  
+}
+
+else
+{
+  <p>sorry, there are no specified flavors at this time.</p>
 }
 
 <p>@Html.ActionLink("Back to Treat Selections", "Index")</p>

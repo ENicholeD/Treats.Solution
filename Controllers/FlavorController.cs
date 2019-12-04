@@ -34,9 +34,14 @@ namespace Treats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    [HttpGet("/flavor/info/{id}")]
     public ActionResult Info(int id)
     {
-        return View();
+        var thisFlavor = _db.Flavor
+        .Include(flavor => flavor.AllTreats)
+        .ThenInclude(join => join.Treat)
+        .FirstOrDefault(flavor => flavor.FlavorId == id);
+        return View(thisFlavor);
     }
     public ActionResult Edit(int id)
     {
